@@ -20,8 +20,8 @@
 import random
 
 def make_text(symbols, number_words):
-    list_words = " ".join(["".join(random.sample(symbols, len(symbols))) for i in range(number_words)])
-    return list_words
+    text = " ".join(["".join(random.sample(symbols, len(symbols))) for i in range(number_words)])
+    return text
 
 def clean_text (text_in, del_text):
     text_out = text_in.split()
@@ -34,6 +34,6 @@ if number_words < 1:
     print('The data is incorrect')
     exit()
 text_in = make_text("абв", number_words)
-print(f'Исходный текст ---> {text_in}')
+print(f'Исходный текст --->          {text_in}')
 del_text = 'абв'
 print(f'Текст с удаленным "{del_text}" ---> {clean_text(text_in, del_text)}')
