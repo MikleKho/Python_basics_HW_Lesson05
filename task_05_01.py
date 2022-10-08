@@ -25,8 +25,7 @@ def make_text(symbols, number_words):
 
 def clean_text (text_in, del_text):
     text_out = text_in.split()
-    while del_text in text_out:
-        text_out.remove(del_text)
+    text_out = [text_out[i] for i in range(len(text_out)) if del_text not in text_out[i]]
     return " ".join(text_out)
 
 number_words = int(input('Введите количество слов ---> '))
